@@ -15,8 +15,8 @@ func NewRecipeHandler(c *gin.Context) {
 			"error": err.Error()})
 		return
 	}
-	recipe.ID = xid.New().String()
+	recipe.Id = xid.New().String()
 	recipe.PublishedAt = time.Now()
-	recipes = append(recipes, recipe)
+	// recipes = append(recipes, recipe)
 	c.JSON(http.StatusOK, recipe)
 }
